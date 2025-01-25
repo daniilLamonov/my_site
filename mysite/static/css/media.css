@@ -55,7 +55,16 @@
         height: 180px;
     }
 }
-
+/* Форма */
+/* Для небольших экранов */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 15px;
+    }
+    .contact-form .form-button {
+        font-size: 14px;
+    }
+}
 
 
 

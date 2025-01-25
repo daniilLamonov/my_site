@@ -152,3 +152,70 @@ h1{
     width: 80%;
     border-bottom: 1px solid #66666680;
 }
+
+/* Форма */
+/* Контейнер формы */
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Форм-группы */
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+/* Поля ввода */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="file"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px 15px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form input[type="file"]:focus,
+.contact-form textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Текстовое поле */
+.contact-form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+/* Кнопка отправки */
+.contact-form .form-button {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.contact-form .form-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
