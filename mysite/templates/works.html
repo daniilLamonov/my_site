@@ -13,12 +13,12 @@ Works
     <div class="works _pading2 _df-row _gap1 _alig-centr">
         <div class="works__img"></div>
         <div class="works-text _df-col _gap1">
-            <div class="works-text__h1">Designing Dashboards</div>
+            <div class="works-text__h1">{{ work.title }}</div>
             <div class="works-text-data _df-row _gap1">
-                <div class="works-text-data__data _bag-color"><span>2020</span></div>
-                <div class="works-text-data__text"><span>Dashboards</span></div>
+                <div class="works-text-data__data _bag-color"><span>{{ work.date_posted }}</span></div>
+                <div class="works-text-data__text"><span>{{ work.reference }}</span></div>
             </div>
-            <div class="works-text__text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat perspiciatis, sed amet, a ipsam ea esse reprehenderit hic ab maiores distinctio quasi architecto deleniti molestias natus veritatis saepe sapiente enim!</p></div>
+            <div class="works-text__text"><p>{{ work.content }}</p></div>
         </div>
     </div>
 {% endfor %}

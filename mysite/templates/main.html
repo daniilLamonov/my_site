@@ -24,7 +24,7 @@ Main Page
         <div class="conteiner _pading2">
             <div class="recent-post _df-row _just-between">
                 <p>Recent posts</p>
-                <a href="" target="_blank" rel="noopener noreferrer">View all</a>
+                <a href="{% url 'post_list' %}" target="_blank" rel="noopener noreferrer">View all</a>
             </div>
             <div class="posts _df-row _just-between _gap1 _pading2">
 
@@ -37,7 +37,7 @@ Main Page
                         <span class="line">|</span>
                         <div class="post-item__data-text"><span>{{ post.category }}</span></div>
                     </div>
-                    <div class="post-item__p"><p>{{ post.content }}</p></div>
+                    <div class="post-item__p"><p>{{ post.content|truncatechars:300 }}</p></div>
                 </div>
                 <!-- ***************статья*************** -->
                 {% endfor %}
@@ -45,59 +45,24 @@ Main Page
         </div>
     </div>
 <!-- *********************************************************************** -->
-                           <!-- статьи -->
-<!-- *********************************************************************** -->
-
-<!-- *********************************************************************** -->
                            <!-- Работы -->
 <!-- *********************************************************************** -->
     <div class="conteiner _pading2">
         <p>Featured works</p>
-
-<!-- ********************************************************************** -->
+        {% for work in works %}
         <div class="works _pading2 _df-row _just-between _alig-centr">
-            <div class="works__img"></div>
+            <div class="works__img">
+                <img src="{{ work.image.url }}" alt="{{ work.title }}">
+            </div>
             <div class="works-text _df-col _gap1">
-                <div class="works-text__h1">Designing Dashboards</div>
+                <div class="works-text__h1">{{ work.title }}</div>
                 <div class="works-text-data _df-row _gap1">
-                    <div class="works-text-data__data _bag-color"><span>2020</span></div>
-                    <div class="works-text-data__text"><span>Dashboards</span></div>
+                    <div class="works-text-data__data _bag-color"><span>{{ work.date_posted }}</span></div>
+                    <div class="works-text-data__text"><span><a href="{{ work.reference }}" target="_blank">Reference to GitHub </a></span></div>
                 </div>
-                <div class="works-text__text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat perspiciatis, sed amet, a ipsam ea esse reprehenderit hic ab maiores distinctio quasi architecto deleniti molestias natus veritatis saepe sapiente enim!</p></div>
+                <div class="works-text__text"><p>{{ work.content|truncatechars:300 }} </p></div>
             </div>
         </div>
-<!-- ********************************************************************** -->
-
-<!-- ********************************************************************** -->
-<div class="works _pading2 _df-row _just-between _alig-centr">
-    <div class="works__img"></div>
-    <div class="works-text _df-col _gap1">
-        <div class="works-text__h1">Designing Dashboards</div>
-        <div class="works-text-data _df-row _gap1">
-            <div class="works-text-data__data _bag-color"><span>2020</span></div>
-            <div class="works-text-data__text"><span>Dashboards</span></div>
-        </div>
-        <div class="works-text__text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat perspiciatis, sed amet, a ipsam ea esse reprehenderit hic ab maiores distinctio quasi architecto deleniti molestias natus veritatis saepe sapiente enim!</p></div>
+        {% endfor %}
     </div>
-</div>
-<!-- ********************************************************************** -->
-
-<!-- ********************************************************************** -->
-<div class="works _pading2 _df-row _just-between _alig-centr">
-    <div class="works__img"></div>
-    <div class="works-text _df-col _gap1">
-        <div class="works-text__h1">Designing Dashboards</div>
-        <div class="works-text-data _df-row _gap1">
-            <div class="works-text-data__data _bag-color"><span>2020</span></div>
-            <div class="works-text-data__text"><span>Dashboards</span></div>
-        </div>
-        <div class="works-text__text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat perspiciatis, sed amet, a ipsam ea esse reprehenderit hic ab maiores distinctio quasi architecto deleniti molestias natus veritatis saepe sapiente enim!</p></div>
-    </div>
-</div>
-<!-- ********************************************************************** -->
-    </div>
-
-<!-- *********************************************************************** -->
-                           <!-- Работы -->
-<!-- *********************************************************************** -->
 {% endblock %}

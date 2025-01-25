@@ -16,8 +16,8 @@ class Works(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     content = models.TextField()
-    # photo = models.ImageField(upload_to='photos/%Y/%m/%d/')
-    reference = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='work_images/', default='work_images/default.png')
+    reference = models.URLField(max_length=200)
     date_posted = models.DateTimeField(default=timezone.now)
     def __str__(self):
         return self.title
