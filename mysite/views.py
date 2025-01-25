@@ -1,5 +1,6 @@
 from django.core.mail import EmailMessage
 from django.conf import settings
+from django.contrib import messages
 
 from django.shortcuts import render, redirect
 from django.utils import timezone
@@ -32,7 +33,7 @@ def contact(request):
             file = form.cleaned_data.get('file', None)
 
             email_message = EmailMessage(
-                subject=f'Messege from {name} {email}',
+                subject=f'Messege from {name} with email: {email}',
                 body=message,
                 from_email=email,
                 to=[settings.CONTACT_EMAIL]
@@ -42,8 +43,10 @@ def contact(request):
                 email_message.attach(file.name, file.read(), file.content_type)
 
             email_message.send()
-
-            return redirect('main')
+            messages.success(request, "Your message has been sent successfully!")
+            return redirect('contact')
+        else:
+            messages.error(request, "There was an error with your submission. Please try again.")
     else:
         form = ContactForm()
 
