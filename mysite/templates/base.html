@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/rezet.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/menu-mobyl.css' %}">
+    <link rel="stylesheet" href="{% static 'css/media.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>{% block title%} {% endblock%}</title>
+</head>
+<body>
+
+<!-- *********************************************************************** -->
+                           <!-- шапка сайта -->
+<!-- *********************************************************************** -->
+    <div class="conteiner">
+        <header>
+            <nav>
+                <ul class="_df-row _just-end-gap1 _alig-centr">
+                    <li><a href="{% url 'main' %}" rel="noopener noreferrer">Home</a></li>
+                    <li><a href="{% url 'works' %}"  rel="noopener noreferrer">Works</a></li>
+                    <li><a href="{% url 'post_list' %}"  rel="noopener noreferrer">Blog</a></li>
+                    <li><a href="{% url 'contacts' %}"  rel="noopener noreferrer">Contact</a></li>
+                </ul>
+            </nav>
+
+<!-- ********************************************************************** -->
+            <!-- Мобильное меню -->
+<!-- ********************************************************************** -->
+
+<a href="#popup" class="aaa h3">&equiv;</a>
+
+    <div id="popup" class="popup">
+    <a href="#" class="popup__area">
+    <div class="popup__body">
+        <div class="popup__content">
+            <a href="{% url 'main' %}" class="popup__cloce">&times;</a>
+            <div class="popup__title _pading1">MENU</div>
+        <div class="popup__text">
+            <ul class="_df-col _gap1">
+                <li><a  href="{% url 'works' %}" rel="noopener noreferrer">Works</a></li>
+                <li><a href="{% url 'post_list' %}" rel="noopener noreferrer" >Blog</a></li>
+                <li><a  href="{% url 'contacts' %}" rel="noopener noreferrer">Contact</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    </a>
+    </div>
+
+<!-- ********************************************************************** -->
+        <!-- Мобильное меню -->
+<!-- ********************************************************************** -->
+        </header>
+    </div>
+<!-- *********************************************************************** -->
+                           <!-- шапка сайта -->
+<!-- *********************************************************************** -->
+{% block content %}
+{% endblock %}
+<!-- *********************************************************************** -->
+                           <!-- НИжняя часть сайта -->
+<!-- *********************************************************************** -->
+    <footer>
+        <div class="conteiner _pading2 _df-col _alig-centr">
+            <div class="social-icons _df-row _just-centr-gap1">
+                <a href="" target="_blank" rel="noopener noreferrer" class="icons">{% include './icons/fb.svg' %}</a>
+                <a href="" target="_blank" rel="noopener noreferrer" class="icons">{% include './icons/insta.svg' %}</a>
+                <a href="" target="_blank" rel="noopener noreferrer" class="icons">{% include './icons/Linkedin.svg' %}</a>
+                <a href="" target="_blank" rel="noopener noreferrer" class="icons">{% include './icons/Vector.svg' %}</a>
+            </div>
+            <div class="copy _pading1">
+                Copyright C 2020 All rights reservese
+            </div>
+        </div>
+    </footer>
+<!-- *********************************************************************** -->
+                           <!-- НИжняя часть сайта -->
+<!-- *********************************************************************** -->
+</body>
+</html>

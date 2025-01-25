@@ -1,0 +1,181 @@
+.conteiner{
+    width: 80%;
+    margin: 0 auto;
+}
+/* ********************************************************* */
+                /* шапка сайта */
+/* ********************************************************* */
+header{
+    width: 100%;
+    min-height: 10vh;
+    display: flex;
+    justify-content: end;
+}
+header nav ul{
+    height: 100%;
+}
+header nav ul li{
+    list-style: none;
+}
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 2rem;
+    padding: .4rem 1rem;
+    transition: all .9s ease;
+    border-bottom: 2px solid #33333300;
+    -webkit-transition: all .9s ease;
+    -moz-transition: all .9s ease;
+    -ms-transition: all .9s ease;
+    -o-transition: all .9s ease;
+}
+header nav ul li a:hover{
+    border-bottom: 2px solid #333;
+}
+.active-color{
+    color: #FF6464;
+}
+
+/* ********************************************************* */
+                /* шапка сайта */
+/* ********************************************************* */
+
+/* ********************************************************* */
+                /* обо мне */
+/* ********************************************************* */
+.my{
+    min-height: 90vh;
+    padding: 1rem 0;
+}
+.my__text{
+    width: 50%;
+    gap: 2rem;
+}
+h1{
+    font-size: 4rem;
+    font-weight: 900;
+}
+.button{
+    background-color: #ff6364;
+    padding: 1rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    text-decoration: none;
+    color: #fafafa;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+}
+.button:hover{
+    box-shadow: 0 0 10px #5f5f5f;
+}
+.my__img {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #333; /* Опционально */
+}
+.my__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* ********************************************************* */
+                /* обо мне */
+/* ********************************************************* */
+
+/* ********************************************************* */
+                /* Статьи */
+/* ********************************************************* */
+.post-item{
+    flex: 0 0 46%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    background-color: #fff;
+    padding: 2rem;
+}
+.post-item__h1 h2{
+    font-size: 2rem;
+    font-weight: 800;
+}
+.post-item__data .line{
+    font-weight: bold;
+    color: #000000;
+}
+
+/* ********************************************************* */
+                /* Статьи */
+/* ********************************************************* */
+
+/* ********************************************************* */
+                /* Работы */
+/* ********************************************************* */
+.works{
+    border-bottom: 1px solid #66666680;
+}
+
+.works-text{
+    max-width: 60%;
+}
+.works__img{
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    background-color: #333;
+}
+.works-text__h1{
+    font-size: 2rem;
+    font-weight: 800;
+    color: #101741;
+}
+.works-text-data__data{
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+.works-text-data__text{
+    font-size: 1.3rem;
+    color: #848484;
+}
+/* ********************************************************* */
+                /* Работы */
+/* ********************************************************* */
+
+/* ********************************************************* */
+                /* НИжняя часть сайта */
+/* ********************************************************* */
+.icons{
+    width: 50px;
+    height: 50px;
+}
+/* ********************************************************* */
+                /* НИжняя часть сайта */
+/* ********************************************************* */
+
+
+
+
+
+
+/* ********************************************************* */
+                /* Блог */
+/* ********************************************************* */
+.statia{
+    width: 80%;
+    border-bottom: 1px solid #66666680;
+}
+/* ********************************************************* */
+                /* Блог */
+/* ********************************************************* */
