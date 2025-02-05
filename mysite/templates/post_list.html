@@ -19,12 +19,9 @@ Blog
                         <div class="post-item__data-text">{{ post.category }}</div>
                     </div>
                     <div class="post-item__p"><p>{{ post.content }}</p></div>
-
                 </div>
             {% endfor %}
+            {% include "pagination.html" with page=posts %}
         </div>
-
-
-
 
 {% endblock %}
