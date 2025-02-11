@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Main Page
+{% endblock %}
+{% block content %}
+    <div class="conteiner">
+        <div class="my _df-row _just-between _alig-centr">
+            <div class="my__text _df-col">
+                <h1>Hi, I am Daniil, Python Developer</h1>
+                <p>Python Developer. A student pursuing a part-time degree, currently looking for my first job in the field. I am interested in a backend developer position. Gaining initial experience is my priority — I am not afraid of challenges or hard work. I am looking for a company where I can grow and develop into a highly skilled technical specialist.</p>
+                <div><a class="button" href="{% static 'files/CV.pdf' %}">Download Resume</a></div>
+            </div>
+           <div class="my__img">
+                <img src="{% static 'images/my_image.jpeg' %}" alt="Daniil Image">
+           </div>
+        </div>
+    </div>
+
+<!-- *********************************************************************** -->
+                           <!-- статьи -->
+<!-- *********************************************************************** -->
+    <div class="_color-blok-blue">
+        <div class="conteiner _pading2">
+            <div class="recent-post _df-row _just-between">
+                <p>Recent posts</p>
+                <a href="{% url 'post_list' %}" target="_blank" rel="noopener noreferrer">View all</a>
+            </div>
+            <div class="posts _df-row _just-between _gap1 _pading2">
+
+                {% for post in posts %}
+                <!-- ***************статья*************** -->
+                <div class="post-item _df-col _gap1">
+                    <div class="post-item__h1"><h2>{{ post.title }}</h2></div>
+                    <div class="post-item__data _df-row _gap1">
+                        <div class="post-item__data-data"><span>{{ post.date_posted }}</span></div>
+                        <span class="line">|</span>
+                        <div class="post-item__data-text"><span>{{ post.category }}</span></div>
+                    </div>
+                    <div class="post-item__p"><p>{{ post.content|truncatechars:300 }}</p></div>
+                </div>
+                <!-- ***************статья*************** -->
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+<!-- *********************************************************************** -->
+                           <!-- Работы -->
+<!-- *********************************************************************** -->
+    <div class="conteiner _pading2">
+        <p>Featured works</p>
+        {% for work in works %}
+        <div class="works _pading2 _df-row _just-between _alig-centr">
+            <div class="works__img">
+                <img src="{{ work.image.url }}" alt="{{ work.title }}">
+            </div>
+            <div class="works-text _df-col _gap1">
+                <div class="works-text__h1">{{ work.title }}</div>
+                <div class="works-text-data _df-row _gap1">
+                    <div class="works-text-data__data _bag-color"><span>{{ work.date_posted }}</span></div>
+                    <div class="works-text-data__text"><span><a href="{{ work.reference }}" target="_blank">Reference to GitHub </a></span></div>
+                </div>
+                <div class="works-text__text"><p>{{ work.content|truncatechars:300 }} </p></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

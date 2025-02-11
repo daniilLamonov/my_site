@@ -1,0 +1,62 @@
+# 🏗 Общие файлы Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 🚀 Виртуальное окружение
+venv/
+env/
+*.env
+*.venv
+
+# 📦 Зависимости
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ⚙️ Конфигурационные файлы среды
+.env
+*.ini
+*.cfg
+
+# 🔥 База данных SQLite
+db.sqlite3
+db.sqlite3-journal
+
+# 🔄 Логи и дампы
+*.log
+*.pot
+*.mo
+*.swp
+*.swo
+*.swn
+*.bak
+*.tmp
+
+# 🔒 Файлы, связанные с развертыванием
+*.pem
+*.key
+*.crt
+*.json  # Если используете Firebase, Google Cloud и т. д.
+
+# 🖼️ Скомпилированные файлы
+staticfiles/
+media/
+
+# 🏗 Файлы кэша Django
+*.pyc
+*.pyo
+__pycache__/
+*.pkl
+
+# 🌍 Docker и другие контейнерные файлы
+docker-compose.override.yml
+
+# 🏗 Node.js и фронтенд
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# 📄 IDE и редакторы
+.vscode/
+.idea/
+*.iml

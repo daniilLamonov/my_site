@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Contact
+{% endblock %}
+{% block content %}
+<div class="conteiner">
+    <div class="my _df-row _just-between _alig-centr">
+        <div class="my__text _df-col">
+            <h1>Contact with me</h1>
+            <div class=" ">
+                <h2>If you want to get in touch with me, simply fill out this form.</h2>
+                <form method="POST" enctype="multipart/form-data" class="contact-form">
+                    <!-- Важный атрибут -->
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ form.as_p }}
+                    </div>
+                    <button type="submit" class="form-button">Send Message</button>
+                </form>
+                {% if messages %}
+                    <div class="alert-container">
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                 <script>
+                    // Ищем все элементы с классом "alert"
+                    setTimeout(function() {
+                        const alerts = document.querySelectorAll('.alert');
+                        alerts.forEach(alert => {
+                            // Добавляем плавное исчезновение
+                            alert.style.transition = 'opacity 0.5s ease';
+                            alert.style.opacity = '0';
+
+                            // Удаляем элемент из DOM через 0.5 секунд после начала исчезновения
+                            setTimeout(() => alert.remove(), 500);
+                        });
+                    }, 5000); // Через 5 секунд
+                </script>
+                {% endif %}
+            </div>
+        </div>
+        <div class="my__img">
+            <img src="{% static 'images/contact_image.jpg' %}" alt="My photo">
+        </div>
+    </div>
+</div>
+{% endblock %}

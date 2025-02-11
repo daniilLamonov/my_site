@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}
+Works
+{% endblock %}
+
+{% block content %}
+
+<div class="conteiner _pading2">
+    <div class="_pading2">
+        <h1>Works</h1>
+    </div>
+        {% for work in works %}
+            <div class="works _pading2 _df-row _gap1 _alig-centr">
+                <div class="works__img"></div>
+                <div class="works-text _df-col _gap1">
+                    <div class="works-text__h1">{{ work.title }}</div>
+                    <div class="works-text-data _df-row _gap1">
+                        <div class="works-text-data__data _bag-color"><span>{{ work.date_posted }}</span></div>
+                        <div class="works-text-data__text"><span>{{ work.reference }}</span></div>
+                    </div>
+                    <div class="works-text__text"><p>{{ work.content }}</p></div>
+                </div>
+            </div>
+        {% endfor %}
+        {% include "pagination.html" with page=works %}
+</div>
+{% endblock %}

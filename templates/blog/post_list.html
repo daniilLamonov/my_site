@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+Blog
+{% endblock %}
+{% block content %}
+
+
+        <div class="conteiner _pading2">
+            <div class="_pading2">
+                <h1>Blog</h1>
+            </div>
+            {% for post in posts %}
+            <!-- ***************статья*************** -->
+                <div class="statia _df-col _gap1 _pading2">
+                    <a href="{{ post.get_absolute_url }}">
+                        <h2>{{ post.title }}</h2>
+                    </a>
+                    <div class="_df-row _gap1">
+                        <div class="post-item__data-data">{{ post.date_posted }}</div>
+                        <span class="line">|</span>
+                        <div class="post-item__data-text">{{ post.category }}</div>
+                    </div>
+                    <div class="post-item__p"><p>{{ post.content }}</p></div>
+                </div>
+            {% endfor %}
+            {% include "pagination.html" with page=posts %}
+        </div>
+
+{% endblock %}
