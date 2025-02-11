@@ -121,6 +121,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+import os
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),  # Указываем папку static
+]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
 MEDIA_URL = '/media/'  # URL для доступа к медиафайлам
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Директория для хранения медиафайлов
 # Default primary key field type

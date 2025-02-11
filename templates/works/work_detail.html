@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ work.title }}{% endblock %}
+
+{% block content %}
+<div class="work-container">
+    <h1 class="work-title">{{ work.title }}</h1>
+    <p class="work-meta">
+        Опубликовано {{ work.publish|date:"F d, Y" }} 
+        автором <span class="work-author">{{ work.author }}</span>
+    </p>
+
+    <!-- Карусель изображений -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            {% for image in images %}
+                <div class="swiper-slide">
+                    <img src="{{ image.image.url }}" alt="{{ work.title }}">
+                </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="work-content">
+        {{ work.content|linebreaks }}
+    </div>
+
+    {% if work.reference %}
+    <div class="work-reference">
+        <a href="{{ work.reference }}" target="_blank">Ссылка на проект</a>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Подключение Swiper.js -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        }
+    });
+</script>
+{% endblock %}

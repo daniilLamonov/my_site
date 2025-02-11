@@ -13,7 +13,9 @@ Works
             <div class="works _pading2 _df-row _gap1 _alig-centr">
                 <div class="works__img"></div>
                 <div class="works-text _df-col _gap1">
-                    <div class="works-text__h1">{{ work.title }}</div>
+                    <a href="{{ work.get_absolute_url }}">
+                        <h2>{{ work.title }}</h2>
+                    </a>
                     <div class="works-text-data _df-row _gap1">
                         <div class="works-text-data__data _bag-color"><span>{{ work.date_posted }}</span></div>
                         <div class="works-text-data__text"><span>{{ work.reference }}</span></div>
